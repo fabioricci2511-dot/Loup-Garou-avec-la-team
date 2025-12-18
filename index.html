@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Loup-Garou – Bruitages</title>
+
+<style>
+body {
+  background: #0f0f0f;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 15px 20px;
+  margin: 8px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: #333;
+  color: white;
+}
+
+button:hover {
+  background: #555;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🐺 Loup-Garou – Bruitages</h1>
+
+<div class="section">
+  <h2>☀️ Jour</h2>
+  <button onclick="play('jour_reveil_coq')">🐓 Réveil du coq</button>
+  <button onclick="play('jour_ambiance')">🌤️ Ambiance jour</button>
+</div>
+
+<div class="section">
+  <h2>🌙 Nuit</h2>
+  <button onclick="play('nuit_atmosphere')">🌫️ Atmosphère</button>
+  <button onclick="play('nuit_peur')">😱 Ambiance peur</button>
+</div>
+
+<div class="section">
+  <h2>🔫 Chasseur</h2>
+  <button onclick="play('chasseur_omae')">💬 Omae wa mou shindeiru</button>
+  <button onclick="play('chasseur_coup_feu')">💥 Coup de feu</button>
+</div>
+
+<div class="section">
+  <h2>🐺 Loups-Garous</h2>
+  <button onclick="play('loup_cri')">🐺 Cri</button>
+  <button onclick="play('loup_deliberation')">🤫 Délibération</button>
+</div>
+
+<div class="section">
+  <h2>☠️ Résultats</h2>
+  <button onclick="play('morts_constatees')">☠️ Morts constatées</button>
+  <button onclick="play('survie_aucune_mort')">🕊️ Aucune mort à déclarer</button>
+</div>
+
+<script>
+let audio = null;
+
+function play(sound) {
+  if (audio) {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+  audio = new Audio("sounds/" + sound + ".mp3");
+  audio.play();
+}
+</script>
+
+</body>
+</html>
